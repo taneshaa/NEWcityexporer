@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import Form from "react-bootstrap/Form";
+
 import Button from 'react-bootstrap/Button';
 
 class Main extends React.Component {
@@ -36,12 +37,14 @@ class Main extends React.Component {
     return (
       <div className="Main" >
         <h2>City Explorer</h2>
+
         <Form onSubmit={(event) => this.getLocation(event)}>
           <Form.Group>
             <Form.Label> Where would you like to explore?</Form.Label>
             <Form.Control type='text' placeholder='seattle' onChange = {(event) => this.handleChange(event)}/>
           </Form.Group>
           <Button type='submit'>explore!</Button>
+
         </Form>
         <h2>here is the map for {this.state.locationObject.display_name}</h2>
         <p>lat/lon: {this.state.locationObject.lat}, {this.state.locationObject.lon}</p>
